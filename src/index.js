@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then(function(object) {
-      // console.log(object);
+      console.log(object);
       object.forEach(element => {
         const div = document.createElement("div")
         div.class = "card"
@@ -58,7 +58,18 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
       })
       .then(function(object) {
-        console.log(object);
+        console.log(object.name)
+        const toyCollectionDiv = document.querySelector("#toy-collection")
+        const div = document.createElement("div")
+        div.class = "card"
+        div.innerHTML = `<h2>${object.name}</h2>`
+        div.innerHTML = `<img src="${object.image}" class="toy-avatar">`
+        div.innerHTML = `<p>Likes: ${object.likes}</p>`
+        const likeButton = document.createElement("button")
+        likeButton.class = "like-btn"
+        likeButton.innerHTML = "Like"
+        toyCollectionDiv.appendChild(div)
+        toyCollectionDiv.appendChild(likeButton)
       })
     }
 
