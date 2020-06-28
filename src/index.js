@@ -20,20 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const toyCollectionDiv = document.querySelector("#toy-collection")
 
-  function createButton() {
-    const likeButton = document.createElement("button")
-    likeButton.class = "like-btn"
-    likeButton.innerHTML = "Like"
-    likeButton.addEventListener("click", function(event) {
-      fetch("http://localhost:3000/toys")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(json) {
-        updateLikes(json, event)
-      })
-    })
-  }
+  // function createButton() {
+  //   const likeButton = document.createElement("button")
+  //   likeButton.class = "like-btn"
+  //   likeButton.innerHTML = "Like"
+  //   likeButton.addEventListener("click", function(event) {
+  //     fetch("http://localhost:3000/toys")
+  //     .then(function(response) {
+  //       return response.json();
+  //     })
+  //     .then(function(json) {
+  //       updateLikes(json, event)
+  //     })
+  //   })
+  // }
 
 
   fetch("http://localhost:3000/toys")
