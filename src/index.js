@@ -110,8 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // find the toy, figure out name of the toy from the event data
       e.preventDefault()
       // let more = parseInt(e.target.previousElementSibling.innerText) + 1
-      let more = parseInt(e.target.previousElementSibling.innerText) + 1
-      
+      // console.log(e.target.previousElementSibling)
+      console.log(parseInt(e.target.previousElementSibling.innerText.split(" ")[1]))
+      let more = parseInt(e.target.previousElementSibling.innerText.split(" ")[1]) + 1
+      console.log("more", more)
       fetch(`http://localhost:3000/toys/${e.target.id}`, {
           method: "PATCH",
           headers: {
